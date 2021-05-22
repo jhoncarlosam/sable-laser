@@ -1,0 +1,33 @@
+body {
+    background: #000000;
+}
+.sable-laser {
+    width: 30px;
+    height: 600px;
+    background: linear-gradient(to right, #ff0000 0%, #ffffff 30%, #ffffff 65%, #ff0000 100%);
+    border-radius: 20px;
+
+    filter: blur(5px);
+
+    animation: appear 0.7s ease-in;
+    transform-origin: 50% 100%;
+}
+.sable-laser::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: #ff0000;
+    transform: scaleX(1);
+    filter: blur(20px);
+
+    animation: brightness 0.7s infinite alternate;
+}
+@keyframes brightness {
+    from {transform: scaleX(1);}
+    to {transform: scaleX(1.2);}
+}
+@keyframes appear {
+    from {transform: scaleY(0);}
+    to {transform: scaleY(1);}
+}
